@@ -2,12 +2,12 @@
 
 namespace Tests\Unit;
 
+use App\Http\Requests\StoreContactRequest;
 use App\Models\Category;
 use App\Models\Tag;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Tests\TestCase;
 use Illuminate\Support\Facades\Validator;
-use App\Http\Requests\StoreContactRequest;
+use Tests\TestCase;
 
 class ContactValidationTest extends TestCase
 {
@@ -38,7 +38,7 @@ class ContactValidationTest extends TestCase
 
     private function validator(array $data)
     {
-        $request = new StoreContactRequest();
+        $request = new StoreContactRequest;
 
         return Validator::make($data, $request->rules());
     }
@@ -142,7 +142,6 @@ class ContactValidationTest extends TestCase
     {
         $data = $this->validData;
         $data['building'] = '';
-
 
         $validator = $this->validator($data);
 

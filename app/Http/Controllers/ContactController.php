@@ -4,12 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreContactRequest;
 use App\Models\Category;
-use App\Models\Tag;
 use App\Models\Contact;
+use App\Models\Tag;
 
 class ContactController extends Controller
 {
-    //お問い合わせ入力ページを表示
+    // お問い合わせ入力ページを表示
     public function index()
     {
         $categories = Category::all();
@@ -28,7 +28,7 @@ class ContactController extends Controller
         return view('contact.confirm', compact(['validated', 'category', 'tags']));
     }
 
-    //お問い合わせ内容新規作成
+    // お問い合わせ内容新規作成
     public function store(StoreContactRequest $request)
     {
         $validated = $request->validated();
