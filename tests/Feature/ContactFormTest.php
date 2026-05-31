@@ -3,8 +3,8 @@
 namespace Tests\Feature;
 
 use App\Models\Category;
-use App\Models\Tag;
 use App\Models\Contact;
+use App\Models\Tag;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -68,7 +68,6 @@ class ContactFormTest extends TestCase
         $response->assertSee('商品について');
         $response->assertSee('重要');
     }
-
 
     /** @test */
     public function サンクスページが表示される(): void
@@ -141,7 +140,6 @@ class ContactFormTest extends TestCase
             route('contact.store'),
             $this->validContactData()
         );
-
 
         $this->assertDatabaseHas('contacts', [
             'email' => 'taro@example.com',

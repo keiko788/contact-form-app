@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 class Contact extends Model
 {
     use HasFactory;
-    
+
     protected $fillable = [
         'category_id',
         'first_name',
@@ -33,7 +33,7 @@ class Contact extends Model
         return $this->belongsToMany(Tag::class);
     }
 
-    //性別のラベル取得
+    // 性別のラベル取得
     public function getGenderLabelAttribute(): string
     {
         return match ($this->gender) {
@@ -43,6 +43,4 @@ class Contact extends Model
             default => '不明',
         };
     }
-
-
 }
