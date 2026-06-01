@@ -1,8 +1,8 @@
 <?php
 
-use App\Http\Controllers\TagController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\TagController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [ContactController::class, 'index'])->name('contact.index');

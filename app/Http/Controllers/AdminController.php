@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Tag;
+use App\Http\Requests\IndexContactRequest;
 use App\Models\Category;
 use App\Models\Contact;
-use App\Http\Requests\IndexContactRequest;
+use App\Models\Tag;
 
 class AdminController extends Controller
 {
@@ -46,7 +46,6 @@ class AdminController extends Controller
 
         return view('admin.index', compact('contacts', 'tags', 'categories'));
     }
-
 
     /**
      * お問い合わせ詳細画面を取得
