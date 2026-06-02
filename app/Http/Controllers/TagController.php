@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Tag;
 use App\Http\Requests\StoreTagRequest;
 use App\Http\Requests\UpdateTagRequest;
+use App\Models\Tag;
 
 class TagController extends Controller
 {
-    //タグを追加
+    // タグを追加
     public function store(StoreTagRequest $request)
     {
         $validated = $request->validated();
@@ -24,7 +24,7 @@ class TagController extends Controller
         return view('admin.tags.edit', compact('tag'));
     }
 
-    //タグを更新
+    // タグを更新
     public function update(UpdateTagRequest $request, Tag $tag)
     {
         $validated = $request->validated();
