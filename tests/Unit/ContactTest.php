@@ -49,4 +49,56 @@ class ContactTest extends TestCase
         $this->assertTrue($contact->tags->contains($tag1));
         $this->assertTrue($contact->tags->contains($tag2));
     }
+
+    /** @test */
+    public function 性別が1の場合は男性を返す(): void
+    {
+        $contact = new Contact([
+            'gender' => 1,
+        ]);
+
+        $this->assertSame(
+            '男性',
+            $contact->gender_label
+        );
+    }
+
+    /** @test */
+    public function 性別が2の場合は女性を返す(): void
+    {
+        $contact = new Contact([
+            'gender' => 2,
+        ]);
+
+        $this->assertSame(
+            '女性',
+            $contact->gender_label
+        );
+    }
+
+    /** @test */
+    public function 性別が3の場合はその他を返す(): void
+    {
+        $contact = new Contact([
+            'gender' => 3,
+        ]);
+
+        $this->assertSame(
+            'その他',
+            $contact->gender_label
+        );
+    }
+
+    /** @test */
+    public function 性別が不正な値の場合は不明を返す(): void
+    {
+        $contact = new Contact([
+            'gender' => 999,
+        ]);
+
+        $this->assertSame(
+            '不明',
+            $contact->gender_label
+        );
+    }
 }

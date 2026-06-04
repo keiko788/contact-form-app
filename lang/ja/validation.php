@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'confirmed' => ':attributeと一致しません',
 
     'custom' => [
         'email' => [
@@ -8,6 +9,7 @@ return [
         ],
         'password' => [
             'required' => 'パスワードを入力してください',
+            'confirmed' => 'パスワードと一致しません',
         ],
     ],
 

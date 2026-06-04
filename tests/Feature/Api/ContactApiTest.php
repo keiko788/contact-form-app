@@ -219,6 +219,10 @@ class ContactApiTest extends TestCase
         $response = $this->getJson('/api/v1/contacts/9999');
 
         $response->assertNotFound();
+
+        $response->assertJson([
+            'error' => 'お問い合わせが見つかりませんでした。',
+        ]);
     }
 
     /** @test */
